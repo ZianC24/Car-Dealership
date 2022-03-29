@@ -1,9 +1,4 @@
-/* 
- * Max Barlow
- * CSC3340 - Databases
- * Fall '21
- * Semester Project Initial DDL Script
- */
+
 
 -- Initial Relational Model for Friendly Cars Dealership 
 CREATE DATABASE SemesterProject;
