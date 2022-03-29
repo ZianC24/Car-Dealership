@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert to CarNewCar</title>
+    <!-- https://stackoverflow.com/questions/16616250/form-submit-with-ajax-passing-form-data-to-php-without-page-refresh -->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        $(function () {
+            $('form').on('submit', function (e) {
+                e.preventDefault();
+                $.ajax({
+                    type: 'post',
+                    url: 'insert.php',
+                    data: $('form').serialize(),
+                    success: function () {
+                        alert('form was submitted');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form id="insert">
+        <label for="VIN">VIN:</label><br>
+        <input type="text" id="VIN" name="VIN"><br>
+        <label for="make">Make:</label><br>
+        <input type="text" name="make" id="make"><br>
+        <label for="model">Model:</label><br>
+        <input type="text" name="model" id="model"><br>
+        <label for="listPrice">List Price:</label><br>
+        <input type="number" name="listPrice" id="listPrice"><br>
+        <label for="dateManufactured">Date Manufactured:</label><br>
+        <input type="date" name="dateManufactured" id="dateManufactured"><br>
+        <label for="placeManufactured">Place Manufactured:</label><br>
+        <input type="text" name="placeManufactured" id="placeManufactured"><br>
+        <label for="cylinders">Cylinders</label><br>
+        <input type="number" name="cylinders" id="cylinders"><br>
+        <label for="doors">Doors:</label><br>
+        <input type="number" name="doors" id="doors"><br>
+        <label for="weight">Weight:</label><br>
+        <input type="text" name="weight" id="weight"><br>
+        <label for="capacity">Capacity:</label><br>
+        <input type="text" name="capacity" id="capacity"><br>
+        <label for="color">Color:</label><br>
+        <input type="text" name="color" id="color"><br>
+        <label for="deliveryDate">Delivery Date:</label><br>
+        <input type="date" name="deliveryDate" id="deliveryDate"><br>
+        <label for="deliveryMiles">Delivery Miles:</label><br>
+        <input type="number" name="deliveryMiles" id="deliveryMiles"><br>
+        <input type="submit" name="submit" value="submit">
+    </form>
+</body>
+
+</html>

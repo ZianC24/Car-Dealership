@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete New Car</title>
+    <!-- https://stackoverflow.com/questions/16616250/form-submit-with-ajax-passing-form-data-to-php-without-page-refresh -->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        $(function () {
+            $('form').on('submit', function (e) {
+                e.preventDefault();
+                // alert("Are you sure you want to delete this car?");
+                $.ajax({
+                    type: 'post',
+                    url: 'delete.php',
+                    data: $('form').serialize(),
+                    success: function () {
+                        alert('form was submitted');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <label for="VIN">VIN to delete:</label><br>
+        <input type="text" name="VIN" id="VIN"><br>
+        <input type="submit" value="submit" name="submit">
+    </form>
+</body>
+</html>
